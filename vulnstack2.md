@@ -46,7 +46,7 @@ web服务：weblogic			pc：MSSQL
 
 该主机常见的net  user /domain都被做了限制无法访问，但是能看见域控名：de1ay.com，通过ping de1ay.com确定域控ip：10.10.10.10
 
-跑了下mimikatz，捕获账号密码：
+跑了下mimikatz，捕获账号密码，注意其中mssql为域账户：
 
 <img src="./pic/v2_mimi.png" alt="v2_mimi" style="zoom:50%;" />
 
@@ -67,7 +67,15 @@ msf使用windows/gather/arp_scanner模块探测存活主机，分别探测两个
 |  10.10.10.80（web）   |
 |  10.10.10.201（PC）   |
 
+**3**、横向尝试
 
+pc（10.10.10.201）由于存在360防护无法被ms17010攻下
+
+使用域账户de1ay\mssql尝试pth，失败
+
+**4**、域控夺取
+
+pth夺取
 
 
 
